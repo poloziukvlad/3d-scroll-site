@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh); /* responsive function */
+  --gutter: 30px;
+  --side-small: 26;
+  --side-big: 36;
+  --background-color: #000;
+  --color-text: #fff;
+  --depth: 4000px;
+  --transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+@font-face {
+  font-family: raleway_c;
+  src: url(/ready-html/fonts/raleway-v22-cyrillic-300.woff2);
+  font-weight: 300;
+}
+@font-face {
+  font-family: raleway_c;
+  src: url(/assets/fonts/raleway-v22-cyrillic-100.woff2);
+  font-weight: 100;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--color-text);
+  font-size: calc(var(--index) * 0.8); /*add responsive fz */
+  font-family: raleway_c, sans-serif;
+  line-height: 1.75;
+  height: var(--depth);
+  font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px; /* style for work with z-axis*/
+}
+
+.gallery {
+  transform-style: preserve-3d; /* style for daughter elements */
+  height: 100%;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition), opacity 0.75s ease;
+  will-change: transform; /* browser use more power for ur animation */
+  transform-style: preserve-3d;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  font-weight: 100;
+}
